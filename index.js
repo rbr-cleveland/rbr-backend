@@ -11,11 +11,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
+var whitelist = ['http://localhost:4000', 'https://rbr-backend.herokuapp.com'];
 var corsOptions = {
-  origin: 'http://localhost:4000'
+  origin: function(origin, callback){
+    var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+    callback(null, originIsWhitelisted);
+  }
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 var port = process.env.PORT || 8081;
 
