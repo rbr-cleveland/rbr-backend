@@ -6,9 +6,9 @@ var _ = require('lodash');
 var app = express();
 
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 app.use(bodyParser.json());
 
 var corsOptions = {
@@ -25,10 +25,8 @@ var accountInfo = {
   client_email: process.env.SHEETEMAIL || localAccountInfo.client_email,
   private_key: process.env.SHEETKEY || localAccountInfo.private_key
 }
+
 var rbrSheet = new spreadsheet('1J7AdFGG_vk36mQu3UbeAYzH_uoN-GAON5Rw1o0x2Qws');
-
-
-
 
 var router = express.Router();
 
