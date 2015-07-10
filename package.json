@@ -1,7 +1,7 @@
 {
-  "name": "node-js-sample",
+  "name": "rbr-cleveland-backend",
   "version": "0.2.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "A backend app for the RBR website using Express",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://github.com/rbr-cleveland/rbr-backend"
   },
   "keywords": [
     "node",
@@ -27,7 +27,7 @@
   ],
   "author": "Mark Pundsack",
   "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
+    "Richard Schulte <richard.j.schulte@gmail.com> (http://adharmonium.com)"
   ],
   "license": "MIT"
 }
