@@ -23,12 +23,14 @@ app.use(cors(corsOptions));
 
 var port = process.env.PORT || 8081;
 
-// localAccountInfo = require('./rbr-app.json') || {};
+
 
 var accountInfo = {
   client_email: process.env.SHEETEMAIL,
   private_key: process.env.SHEETKEY
 }
+
+var accountInfo = require('./rbr-app.json');
 
 var rbrSheet = new spreadsheet('1J7AdFGG_vk36mQu3UbeAYzH_uoN-GAON5Rw1o0x2Qws');
 
@@ -62,12 +64,12 @@ router.route('/new-account').post(function(req, res) {
 
   rbrSheet.useServiceAccountAuth(accountInfo, function(err) {
     console.log('oh hey!')
-    // if (err) {
-    //   res.status(500).json({
-    //     message: "There was an authentication error",
-    //     error: err
-    //   })
-    // } else {
+    if (err) {
+      res.status(500).json({
+        message: "There was an authentication error",
+        error: err
+      })
+    } else {
       rbrSheet.getInfo(function(err, sheet_info) {
         console.log('hey!')
         rbrSheet.addRow(1, row, function(err, newRow) {
@@ -87,7 +89,7 @@ router.route('/new-account').post(function(req, res) {
           }
         });
       });
-    // }
+    }
   });
 });
 
