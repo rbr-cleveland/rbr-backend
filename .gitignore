@@ -1,1 +1,4 @@
 node_modules
+*.p12
+rbr-app.json
+rbr-backend.pem
