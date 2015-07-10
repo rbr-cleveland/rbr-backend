@@ -19,11 +19,11 @@ app.use(cors());
 
 var port = process.env.PORT || 8081;
 
-localAccountInfo = require('./rbr-app.json') || {};
+// localAccountInfo = require('./rbr-app.json') || {};
 
 var accountInfo = {
-  client_email: process.env.SHEETEMAIL || localAccountInfo.client_email,
-  private_key: process.env.SHEETKEY || localAccountInfo.private_key
+  client_email: process.env.SHEETEMAIL,
+  private_key: process.env.SHEETKEY
 }
 
 var rbrSheet = new spreadsheet('1J7AdFGG_vk36mQu3UbeAYzH_uoN-GAON5Rw1o0x2Qws');
