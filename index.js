@@ -61,6 +61,7 @@ router.route('/new-account').post(function(req, res) {
   // console.log(req, row);
 
   rbrSheet.useServiceAccountAuth(accountInfo, function(err) {
+    console.log('oh hey!')
     if (err) {
       res.status(500).json({
         message: "There was an error",
@@ -68,7 +69,7 @@ router.route('/new-account').post(function(req, res) {
       })
     } else {
       rbrSheet.getInfo(function(err, sheet_info) {
-
+        console.log('hey!')
         rbrSheet.addRow(1, row, function(err, newRow) {
           if (err) {
             res.status(500).json({
@@ -76,6 +77,7 @@ router.route('/new-account').post(function(req, res) {
               error: err
             })
           } else {
+            console.log('and now for this!')
             res.status(200).json({
               message: "Hooray we might have added a row!",
               data: row,
