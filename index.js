@@ -30,7 +30,7 @@ var accountInfo = {
   private_key: process.env.SHEETKEY
 }
 
-var accountInfo = require('./rbr-app.json');
+// var accountInfo = require('./rbr-app.json');
 
 var rbrSheet = new spreadsheet('1J7AdFGG_vk36mQu3UbeAYzH_uoN-GAON5Rw1o0x2Qws');
 
