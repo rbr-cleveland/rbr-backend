@@ -19,7 +19,7 @@ app.use(cors());
 
 var port = process.env.PORT || 8081;
 
-localAccountInfo = require('./rbr-app.json')
+localAccountInfo = require('./rbr-app.json') || {};
 
 var accountInfo = {
   client_email: process.env.SHEETEMAIL || localAccountInfo.client_email,
