@@ -62,12 +62,12 @@ router.route('/new-account').post(function(req, res) {
 
   rbrSheet.useServiceAccountAuth(accountInfo, function(err) {
     console.log('oh hey!')
-    if (err) {
-      res.status(500).json({
-        message: "There was an error",
-        error: err
-      })
-    } else {
+    // if (err) {
+    //   res.status(500).json({
+    //     message: "There was an authentication error",
+    //     error: err
+    //   })
+    // } else {
       rbrSheet.getInfo(function(err, sheet_info) {
         console.log('hey!')
         rbrSheet.addRow(1, row, function(err, newRow) {
@@ -87,7 +87,7 @@ router.route('/new-account').post(function(req, res) {
           }
         });
       });
-    }
+    // }
   });
 });
 
