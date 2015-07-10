@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-var whitelist = ['http://localhost:4000', 'https://rbr-backend.herokuapp.com'];
+var whitelist = ['http://localhost:4000', 'https://rbr-cleveland.github.io'];
 var corsOptions = {
   origin: function(origin, callback){
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
